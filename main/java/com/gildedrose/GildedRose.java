@@ -2,6 +2,11 @@ package com.gildedrose;
 
 class GildedRose {
     Item[] items;
+    final String AGED_BRIE = "Aged Brie";
+    final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    final String CONCERT_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    final String CONJURED = "Conjured";
+
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -14,12 +19,12 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            if (!item.name.equals("Aged Brie")
-                    && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!item.name.equals(AGED_BRIE)
+                    && !item.name.equals(CONCERT_PASSES)) {
                 if (item.quality > 0) {
-                    if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                    if (!item.name.equals(SULFURAS)) {
                         item.updateQuality(-1);
-                        if (item.name.contains("Conjured") && item.quality>0) {
+                        if (item.name.contains(CONJURED) && item.quality>0) {
                             item.updateQuality(-1);
                         }
                     }
@@ -28,7 +33,7 @@ class GildedRose {
                 if (item.quality < 50) {
                     item.updateQuality(1);
 
-                    if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                    if (item.name.equals(CONCERT_PASSES)) {
                         if (item.sellIn < 11) {
                             if (item.quality < 50) {
                                 item.updateQuality(1);
@@ -49,15 +54,15 @@ class GildedRose {
 
     public void updateSellIn(){
         for (Item item : items) {
-            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (!item.name.equals(SULFURAS)) {
                 item.sellIn = item.sellIn - 1;
             }
 
             if (item.sellIn < 0) {
-                if (!item.name.equals("Aged Brie")) {
-                    if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (!item.name.equals(AGED_BRIE)) {
+                    if (!item.name.equals(CONCERT_PASSES)) {
                         if (item.quality > 0) {
-                            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                            if (!item.name.equals(SULFURAS)) {
                                 item.updateQuality(-1);
                             }
                         }
