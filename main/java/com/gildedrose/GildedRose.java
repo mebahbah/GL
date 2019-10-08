@@ -7,6 +7,11 @@ class GildedRose {
         this.items = items;
     }
 
+    public void update(){
+        updateQuality();
+        updateSellIn();
+    }
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
@@ -41,6 +46,11 @@ class GildedRose {
                 }
             }
 
+        }
+    }
+
+    public void updateSellIn(){
+        for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                 items[i].sellIn = items[i].sellIn - 1;
             }
