@@ -2,27 +2,27 @@ package com.gildedrose;
 
 public class ConcertItem extends Item {
 
-   public Item(String name, int sellIn, int quality) {
+   public ConcertItem(String name, int sellIn, int quality) {
         super(name,sellIn,quality);
     }
 
    public void updateQuality()
     {
-	if (this.sellIn < 11)
+	if (this.sellIn > 10)
 	{
-		this.quality = this.quality+2
+		this.quality = this.quality+1;
 	}
-	else if (this.sellIn < 6)
+	else if (this.sellIn < 10)
 	{
-		this.quality = this.quality +3
+		this.quality = this.quality +2;
 	}
-	else if (this.sellIn > 10)
+	else if (this.sellIn > 0 & this.sellIn < 6)
 	{
-		this.quality = this.quality +1
+		this.quality = this.quality +3;
 	}
 	else
 	{
-		this.quality = 0
+		this.quality = 0;
 	}
         
     }

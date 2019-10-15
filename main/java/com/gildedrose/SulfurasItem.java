@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class SulfurasItem extends Item{
 
-    public Item(String name, int sellIn, int quality) {
+    public SulfurasItem(String name, int sellIn, int quality) {
         super(name,sellIn,quality);
     }
 

@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class CommonItem extends Item{
 
-    public Item(String name, int sellIn, int quality) {
+    public CommonItem(String name, int sellIn, int quality) {
         super(name,sellIn,quality);
     }
 

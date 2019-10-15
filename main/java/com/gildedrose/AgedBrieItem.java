@@ -1,14 +1,14 @@
 package com.gildedrose;
 
-public class AgedBrie extends Item {
+public class AgedBrieItem extends Item {
 
-   public Item(String name, int sellIn, int quality) {
+   public AgedBrieItem(String name, int sellIn, int quality) {
         super(name,sellIn,quality);
     }
 
    public void updateQuality(int amount)
     {
-		this.quality = this.quality + amount
+		this.quality = this.quality + amount;
     }
 
    @Override
