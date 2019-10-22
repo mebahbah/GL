@@ -13,13 +13,22 @@ public class AgedBrieItem extends Item {
   }
 
   public void updateQuality(){
-    if(this.quality<50){
+    if(this.quality<50)
+    {
       this.quality = this.quality + 1;
+    }
+    if (this.sellIn == 0)
+    {
+        this.quality = this.quality + 1;
     }
   }
 
-	public void updateSellIn(){
-		this.quality = this.sellIn-1;
+	public void updateSellIn()
+	{
+		if(this.sellIn > 0) 
+		{
+			this.sellIn = this.sellIn-1;
+		}
 	}
 
    @Override

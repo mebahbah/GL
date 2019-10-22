@@ -13,12 +13,21 @@ public class ConjuredItem extends Item{
         return;
     }
 
-    public void updateQuality(){
+    public void updateQuality()
+    {
         this.quality = this.quality-2;
+        if(this.quality <0)
+        {
+        	this.quality = 0;
+        }
     }
 
     public void updateSellIn(){
-        this.quality = this.sellIn-1;
+        this.sellIn = this.sellIn-1;
+        if(this.sellIn <0)
+        {
+        	this.sellIn = 0;
+        }
     }
 
    @Override

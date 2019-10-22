@@ -14,8 +14,9 @@ public class Item {
         this.quality = quality;
     }
 
-    public void updateQuality(int amount){
-        this.quality = this.quality+amount;
+    public void update()
+    {
+        
     }
 
    @Override
