@@ -14,15 +14,15 @@ public class ConcertItem extends Item {
     }
 
    	public void updateQuality(){
-		if (this.sellIn < 11)
+		if (this.sellIn < 11 && this.sellIn >= 6)
 		{
 			this.quality = this.quality+2;
 		}
-		else if (this.sellIn < 6)
+		else if (this.sellIn <= 5 && this.sellIn >0)
 		{
 			this.quality = this.quality +3;
 		}
-		else if (this.sellIn > 10)
+		else if (this.sellIn >= 10)
 		{
 			this.quality = this.quality +1;
 		}
