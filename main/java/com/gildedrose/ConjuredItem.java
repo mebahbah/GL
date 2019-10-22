@@ -4,10 +4,21 @@ public class ConjuredItem extends Item{
 
     public ConjuredItem(String name, int sellIn, int quality) {
         super(name,sellIn,quality);
+        if(!name.contains("Conjured")){throw new IllegalArgumentException();}
+    }
+
+    public void update(){
+        this.updateQuality();
+        this.updateSellIn();
+        return;
     }
 
     public void updateQuality(){
         this.quality = this.quality-2;
+    }
+
+    public void updateSellIn(){
+        this.quality = this.sellIn-1;
     }
 
    @Override

@@ -2,30 +2,39 @@ package com.gildedrose;
 
 public class ConcertItem extends Item {
 
-   public ConcertItem(String name, int sellIn, int quality) {
-        super(name,sellIn,quality);
+	public ConcertItem(int sellIn, int quality) {
+    	super("Backstage passes to a TAFKAL80ETC concert",sellIn,quality);
     }
 
-   public void updateQuality()
-    {
-	if (this.sellIn > 10)
-	{
-		this.quality = this.quality+1;
-	}
-	else if (this.sellIn < 10)
-	{
-		this.quality = this.quality +2;
-	}
-	else if (this.sellIn > 0 & this.sellIn < 6)
-	{
-		this.quality = this.quality +3;
-	}
-	else
-	{
-		this.quality = 0;
-	}
-        
+
+	public void update(){
+        this.updateQuality();
+        this.updateSellIn();
+        return;
     }
+
+   	public void updateQuality(){
+		if (this.sellIn < 11)
+		{
+			this.quality = this.quality+2;
+		}
+		else if (this.sellIn < 6)
+		{
+			this.quality = this.quality +3;
+		}
+		else if (this.sellIn > 10)
+		{
+			this.quality = this.quality +1;
+		}
+		else
+		{
+			this.quality = 0;
+		} 
+    }
+
+	public void updateSellIn(){
+		this.quality = this.sellIn-1;
+	}
 
    @Override
    public String toString() {

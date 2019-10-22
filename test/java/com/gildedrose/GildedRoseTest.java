@@ -38,7 +38,7 @@ public class GildedRoseTest {
     }  
 
     @Test
-    public void testSellInNotNegative() // Test d'objet avec une Quality a Zero
+    public void testSellInNotNegative() 
     {
         Item[] items = new Item[] 
         {
@@ -157,7 +157,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityWhenSellInIsZero() // Test d'objet sans contrainte sur Quality a Zero
+    public void testQualityWhenSellInIsZero() 
     {
         Item[] items = new Item[] 
         {

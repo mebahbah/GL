@@ -2,11 +2,11 @@ package com.gildedrose;
 
 public class SulfurasItem extends Item{
 
-    public SulfurasItem(String name, int sellIn, int quality) {
-        super(name,sellIn,quality);
+    public SulfurasItem(int sellIn) {
+        super("Sulfuras, Hand of Ragnaros",sellIn,80);
     }
 
-    public void updateQuality(){
+    public void update(){
         return;
     }
 
